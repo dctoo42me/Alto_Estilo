@@ -1,4 +1,36 @@
-// script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('close-btn');
+    const navItems = document.querySelectorAll('.nav-links li a');
+
+    // Function to open the menu
+    function openMenu() {
+        navLinks.classList.add('active');
+        overlay.classList.add('active');
+    }
+
+    // Function to close the menu
+    function closeMenu() {
+        navLinks.classList.remove('active');
+        overlay.classList.remove('active');
+    }
+
+    // Open the menu when the hamburger is clicked
+    hamburger.addEventListener('click', openMenu);
+
+    // Close the menu when the close button or overlay is clicked
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close the menu when any menu item is clicked
+    navItems.forEach(item => {
+        item.addEventListener('click', closeMenu);
+    });
+});
+
+// slideshow
 
 let slideIndex = 0;
 
