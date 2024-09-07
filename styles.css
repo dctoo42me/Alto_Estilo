@@ -1,0 +1,453 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 95px; /* Adjust this value to match the height of your fixed nav */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-color: #000000;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    background: url('images/inside_shop.jpeg') no-repeat center fixed;
+    background-size: 100%;
+}
+
+/************ Nav Settings *****************/
+
+nav {
+    position: fixed;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 10px;
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
+    background-color: black;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    &&:hover {
+        opacity: 50%;
+    }
+}
+
+.nav-space {
+    display: none;
+    margin-top: 100px;
+}
+
+.nav-space.plus {
+    height: 140px;
+}
+
+/************ Header Settings *****************/
+
+header#hero {
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(51, 43, 7, 0.815);
+}
+
+header#hero h1 {
+    font-family: "Lora", serif;
+    font-weight: 100;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+header#hero p {
+    font-style: italic;
+    font-size: 1.75rem;
+    /* color: rgb(234, 233, 233); */
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    width: 100px;
+    &&:hover {
+        opacity: 50%;
+    }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000db;
+}
+
+.mars {
+    margin-top: 60px;
+}
+
+.button {
+    background-color: rgb(251, 212, 39);
+    color: black;
+    width: 200px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color .2s ease-in-out, transform 0.5s ease;
+    &&:hover {
+        background-color:rgb(244, 232, 179);
+        transform: scale(1.05);
+    }
+}
+
+a.button {
+    margin-top: 20px;
+}
+
+a.button.no-margin {
+    margin-top: 0;
+    text-align: center;
+}
+
+/************ Section Settings *****************/
+
+section {
+    padding: 100px 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    /* background-color: red; */
+    border-bottom:rgba(251, 212, 39, 0.815);
+}
+
+.top  {
+    margin-top: 60px;
+}
+
+section h2 {
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    color: rgba(251, 212, 39, 0.815);
+}
+
+/* section p {
+    font-size: 1.4rem;
+    font-weight: 100;
+} */
+
+.video-section {
+    width:100%;
+    max-width: 550px;
+    height: 315px;
+}
+
+.vid-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect ratio: 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.vid-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+section#about p {
+    padding: 10px;
+    text-align: left;
+}
+
+/************ Services *****************/
+
+.services-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.services-list {
+    list-style-type: none; /* Remove default list style */
+    padding: 0;
+}
+
+.services-list li {
+    font-size: 1.2em;
+    color: #555; /* Medium grey text color */
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #fff; /* White background for each item */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/************ Reviews *****************/
+
+.reviews-bg {
+    background-color: #474646dd;
+}
+
+#reviews {
+    text-align: left;
+}
+
+#review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: rgba(251, 212, 39, 0.815);
+    margin-bottom: 40px;
+    padding: 0 10%;
+}
+
+#review-container p {
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+
+#reviews p span {
+    display: block;          /* Sends the span to a new line */
+    text-align: right;       /* Aligns the text to the right */
+    font-style: italic;      /* Italicizes the text */
+    margin-top: 20px;         /* Optional: adds a bit of space between the review and the span */
+    font-weight: bold;       /* Optional: makes the text bold */
+}
+
+/************ Slide Show *****************/
+
+.slideshow-container {
+    position: relative;
+    max-width: 70%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slideshow {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slideshow img {
+    width: 100%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px 17px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.183);
+    cursor: pointer;
+    border-radius:50%;
+    z-index: 1000;
+}
+
+.prev {
+    left: 0;
+    margin-left: 10px;
+}
+
+.next {
+    right: 0;
+    margin-right: 10px;
+}
+
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.iframe-container:hover {
+    opacity: 50%;
+}
+
+section .spacing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.small-spacing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.small-text {
+    font-size: 1rem;
+}
+
+/************ Social Media *****************/
+
+.social-media {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.social-media a {
+    margin: 0 15px;
+    color: rgba(251, 212, 39, 0.815);
+    font-size: 2em; /* Adjust size of the icons */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: white /* Change color on hover */
+}
+
+footer {
+    padding: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+#loom-companion-mv3 {
+    display: none;
+}
+
+/************ Responsive Breakpoints ****************/
+
+/* Large devices (Desktops, 900px and down) */
+@media only screen and (max-width: 900px) 
+{
+    header#hero h1 {
+        font-size: 3rem;
+    }
+    
+    header#hero p {
+        font-size: 1.2rem;
+    }
+
+    #review-container p {
+        font-size: 1rem;
+        line-height: 1.25;
+        font-weight: 100;
+    }
+
+    #review-container {
+        padding-top: 30px;
+        height: 300px;
+    }
+}
+
+/* Medium devices (landscape tablets, 700px and down) */
+@media only screen and (max-width: 700px) 
+{
+    header#hero h1 {
+        font-size: 2rem;
+    }
+        
+    header#hero p {
+        font-size: 1rem;
+    }
+
+    a.button {
+        font-size: .75rem;
+        width: 150px;
+    }
+
+    .container {
+        background: url('images/inside_shop.jpeg') no-repeat center fixed;
+        background-size: 100vh;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and down) */
+@media only screen and (max-width: 550px) 
+{
+    header#hero{
+        padding: 60px 20px;
+    }
+    
+    header#hero p{
+        padding: 15px 40px;
+    }
+
+    .video-section {
+        width: 100vw;
+        height: auto;
+    }
+
+    #review-container {
+        height: 60vh;
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 150px;
+    }
+    .services-list li {
+        background-color: #fff; /* White background for each item */
+        border-radius: 0; /* Rounded corners */
+    }
+    section#about p {
+        padding: 20px;
+    }
+}
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 450px) 
+{
+    section {
+        padding: 100px 0;
+    }
+}
+
