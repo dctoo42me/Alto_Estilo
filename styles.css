@@ -22,7 +22,7 @@ body {
     width: 100%;
     max-width: 1200px;
     background: url('images/inside_shop.jpeg') no-repeat center fixed;
-    background-size: 100%;
+    background-size: 120vh;
 }
 
 /************ Nav Settings *****************/
@@ -473,7 +473,7 @@ footer {
     }
 
     .container {
-        background: url('images/inside_shop.jpeg') no-repeat center fixed;
+        background: url('images/inside_shop.jpeg') no-repeat cover fixed;
         background-size: 100vh;
     }
 }
@@ -481,6 +481,10 @@ footer {
 /* Small devices (portrait tablets and large phones, 600px and down) */
 @media only screen and (max-width: 570px) 
 {
+    html {
+        scroll-padding-top: 100px; /* Adjust this value to match the height of your fixed nav */
+    }
+    
     nav {
         padding-left: 15px;
         padding-right: 25px;
@@ -512,6 +516,18 @@ footer {
     header#hero p{
         padding: 15px 40px;
     }
+
+    header#hero {
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(51, 43, 7, 0.563);
+    }
+    
 
     .video-section {
         width: 100vw;
@@ -548,5 +564,11 @@ footer {
     section {
         padding: 100px 0;
     }
+
+    .logo img {
+        width: 75px;
+    }
+
+
 }
 
