@@ -239,8 +239,16 @@ section {
     border-bottom:rgba(251, 212, 39, 0.815);
 }
 
-.mar-t-60 {
+.yellow {
+    color: rgba(251, 212, 39, 0.815);
+}
+
+.m-t-60 {
     margin-top: 60px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
 }
 
 section h2 {
