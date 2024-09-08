@@ -21,7 +21,11 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
-    background: url('images/inside_shop.jpeg') no-repeat center fixed;
+    background-image: url('images/inside_shop.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: 120vh;
 }
 
@@ -470,11 +474,6 @@ footer {
     a.button {
         font-size: .75rem;
         width: 150px;
-    }
-
-    .container {
-        background: url('images/inside_shop.jpeg') no-repeat cover fixed;
-        background-size: 100vh;
     }
 }
 
