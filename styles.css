@@ -14,20 +14,18 @@ body {
     color: white;
     background-color: #000000;
     height: 100%;
-}
-
-.container {
     position: relative;
     margin: 0 auto;
     width: 100%;
+    height: 100vh;
     max-width: 1200px;
     background-image: url('images/inside_shop.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 120vh;
 }
+
 
 /************ Nav Settings *****************/
 
@@ -481,7 +479,7 @@ footer {
 @media only screen and (max-width: 570px) 
 {
     html {
-        scroll-padding-top: 100px; /* Adjust this value to match the height of your fixed nav */
+        scroll-padding-top: 90px; /* Adjust this value to match the height of your fixed nav */
     }
     
     nav {
@@ -509,7 +507,7 @@ footer {
     }
 
     header#hero{
-        padding: 60px 20px;
+        padding: 20px;
     }
     
     header#hero p{
@@ -517,19 +515,18 @@ footer {
     }
 
     header#hero {
-        height: 120vh;
+        /* height: 120vh; */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
         text-align: center;
-        background-color: rgba(51, 43, 7, 0.563);
+        background-color: rgba(51, 43, 7, 0.674);
     }
     
-
     .video-section {
-        width: 100vw;
+        width: 50vw;
         height: auto;
     }
 
