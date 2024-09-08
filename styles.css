@@ -145,7 +145,7 @@ nav ul li a {
 /************ Header Settings *****************/
 
 header#hero {
-    height: 110vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
