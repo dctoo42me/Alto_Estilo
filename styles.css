@@ -9,17 +9,6 @@ html {
     scroll-padding-top: 95px; /* Adjust this value to match the height of your fixed nav */
 }
 
-/* body::before {
-    content: '';
-    position: fixed;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-image:url(images/inside_shop.jpeg);
-    background-repeat: no-repeat;
-    z-index: -1;
-} */
-
 body {
     font-family: 'Arial', sans-serif;
     color: white;
@@ -266,10 +255,22 @@ section h2 {
     font-weight: 100;
 } */
 
+#hero {
+    position: relative;
+    z-index: 1;
+}
+
 .video-section {
+    position: static;
     width:100%;
     max-width: 550px;
     height: 315px;
+    z-index: 2;
+}
+
+.hero-container .button, #hero h1, #hero p {
+    position: static;
+    z-index: 2;
 }
 
 .vid-container {
@@ -298,7 +299,7 @@ section#about p {
 
 /************ Services *****************/
 
-.services-section h2 {
+.services h2 {
     font-size: 2em;
     margin-bottom: 20px;
 }
@@ -508,107 +509,152 @@ footer {
         font-size: .75rem;
         width: 150px;
     }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and down) */
-@media only screen and (max-width: 570px) 
-{
-    html {
-        scroll-padding-top: 90px; /* Adjust this value to match the height of your fixed nav */
-    }
-
-    .bg-container {
-        background-size: cover;
-    }
-
-    .logo img {
-        width: 75px;
-    }
     
-    nav {
-        padding-left: 15px;
-        padding-right: 25px;
-    }
-    .nav-desktop {
-        display: none;
-    }
-    .hamburger {
-        display: block;
-    }
-    
-    .nav-links {
-        padding-top: 150px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    .overlay.active {
-        visibility: visible;
-        opacity: 1;
-    }
-
-    header#hero{
-        padding: 0 20px;
-    }
-    
-    header#hero p{
-        padding: 15px 40px;
-    }
-
     header#hero {
-        margin-top: 40px;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        position: relative;
+        background-image: url(images/inside_shop.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+
+    #hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        text-align: center;
-        background-color: rgba(51, 43, 7, 0.674);
+        height: 100%;
+        background:rgba(71, 60, 10, 0.591);
+        /* filter: blur(5px);  */
+        z-index: 1;
     }
-    
-    .video-section {
-        width: 90%;
-        height: auto;
-    }
-
-    .slideshow-container {
-        max-width: 90%;
-    }
-
-    #review-container {
-        height: 60vh;
-    }
-
-    .services-list li {
-        background-color: #fff; /* White background for each item */
-        border-radius: 0; /* Rounded corners */
-    }
-    section#about p {
-        text-justify: auto;
-        font-size: 1rem;
-        line-height: 1.4;
-    }
-
-    section#reviews.review-bg {
-        padding: 100px 0;
-    }
-
-    /* .container {
-        width: 100%;
-        height: 100vh;
-    } */
-}
-
- /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 450px) 
-{
     
     .bg-container {
-        background-size: 150% 100%;
+        background-image: url(images/honeyComb.svg);
+        background-size: cover;
+        background-position: 1;
+        background-repeat: repeat;
     }
+        
+    }
+    
+    
+    /* Small devices (portrait tablets and large phones, 600px and down) */
+    @media only screen and (max-width: 570px) 
+    {
+        html {
+        scroll-padding-top: 90px; /* Adjust this value to match the height of your fixed nav */
+        }
+        
+        .bg-container {
+            background-image: url(images/honeyComb.svg);
+            background-size: contain;
+            background-position: 1;
+            background-repeat: repeat;
+        }
+        
+        
+        .logo img {
+            width: 75px;
+        }
+        
+        nav {
+            padding-left: 15px;
+            padding-right: 25px;
+        }
+        .nav-desktop {
+            display: none;
+        }
+        .hamburger {
+            display: block;
+        }
+        
+        .nav-links {
+            padding-top: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
 
-}
+        .overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        header#hero{
+            padding: 0 20px;
+        }
+        
+        header#hero p{
+            padding: 15px 40px;
+        }
+
+        header#hero {
+            margin-top: 40px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(170, 144, 27, 0.674);
+        }
+        
+        .video-section {
+            width: 90%;
+            height: auto;
+        }
+        
+        .slideshow-container {
+            max-width: 90%;
+        }
+
+        #review-container {
+            height: 60vh;
+        }
+        
+        .services-list li {
+            background-color: #fff; /* White background for each item */
+            border-radius: 0; /* Rounded corners */
+        }
+        section#about p {
+            text-justify: auto;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        
+        section#reviews.review-bg {
+            padding: 100px 0;
+        }
+        
+    }
+    
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 450px) 
+    {
+        section#about p {
+            text-justify: auto;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        section#about {
+            padding: 100px 20px;
+        }
+
+        section.services, section#map {
+            padding: 100px 0;
+        }
+        
+        .bg-container {
+            background-image: url(images/honeyComb.svg);
+            background-size: contain;
+            background-position: 1;
+            background-repeat: repeat;
+        }
+
+    }
 
