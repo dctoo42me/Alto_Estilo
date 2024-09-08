@@ -552,6 +552,7 @@ footer {
             background-size: contain;
             background-position: 1;
             background-repeat: repeat;
+            background-attachment: fixed;
         }
         
         
@@ -626,8 +627,12 @@ footer {
             line-height: 1.4;
         }
         
-        section#reviews.review-bg {
+        section#reviews.review-bg, section#portfolio.portfolio {
             padding: 100px 0;
+        }
+
+        .slideshow-container {
+            max-width: 100%;
         }
         
     }
@@ -645,7 +650,7 @@ footer {
             padding: 100px 20px;
         }
 
-        section.services, section#map {
+        section.services, section#map, section {
             padding: 100px 0;
         }
         
