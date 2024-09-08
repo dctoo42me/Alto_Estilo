@@ -41,12 +41,6 @@ function moveSlide(step) {
     document.querySelector('.slideshow').style.transform = `translateX(-${slideWidth * slideIndex}px)`;
 }
 
-document.querySelectorAll('.slideshow img').forEach(img => {
-    img.addEventListener('click', function() {
-    });
-});
-
-
 // Auto-populate reviews
 function loadReviews() {
     fetch('reviews.html')
@@ -91,4 +85,4 @@ function loadReviews() {
 // Call the function to start the review cycle
 loadReviews();
 
-window.onload = loadReviews;
+// window.onload = loadReviews;
