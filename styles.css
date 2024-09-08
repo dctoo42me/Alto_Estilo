@@ -235,7 +235,6 @@ section {
     text-align: center;
     width: 100%;
     max-width: 800px;
-    /* background-color: red; */
     border-bottom:rgba(251, 212, 39, 0.815);
 }
 
@@ -552,7 +551,7 @@ footer {
     @media only screen and (max-width: 570px) 
     {
         html {
-        scroll-padding-top: 90px; /* Adjust this value to match the height of your fixed nav */
+        scroll-padding-top: 50px;
         }
         
         .bg-container {

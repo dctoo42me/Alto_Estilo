@@ -63,25 +63,59 @@ function loadReviews() {
 
             const shuffledReviews = shuffle(reviews);
             let currentIndex = 0;
+            let isAnimating = false;
 
-            function showReview() {
+            function showReview(index) {
+                if (isAnimating) return;
+                isAnimating = true;
+
                 // Hide all reviews except the current one
-                shuffledReviews.forEach((review, index) => {
-                    review.style.display = index === currentIndex ? 'block' : 'none';
+                shuffledReviews.forEach((review, i) => {
+                    review.style.display = i === index ? 'block' : 'none';
                 });
 
-                // Move to the next review, looping back to the start
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 300); // adjust the time to match your animation speed
+            }
+
+            function nextReview() {
                 currentIndex = (currentIndex + 1) % shuffledReviews.length;
+                showReview(currentIndex);
+            }
+
+            function prevReview() {
+                currentIndex = (currentIndex - 1 + shuffledReviews.length) % shuffledReviews.length;
+                showReview(currentIndex);
             }
 
             // Show the first review immediately
-            showReview();
+            showReview(currentIndex);
 
-            // Switch reviews every 3 seconds
-            setInterval(showReview, 8000);
+            // Automatically switch reviews every 8 seconds
+            setInterval(nextReview, 8000);
+
+            // Swipe functionality for touch devices
+            let touchStartX = null;
+
+            reviewContainer.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            reviewContainer.addEventListener('touchend', function(e) {
+                if (!touchStartX) return;
+                let touchEndX = e.changedTouches[0].screenX;
+                if (touchEndX - touchStartX > 50) {
+                    prevReview(); // swipe right to go to the previous review
+                } else if (touchEndX - touchStartX < -50) {
+                    nextReview(); // swipe left to go to the next review
+                }
+                touchStartX = null;
+            });
         })
         .catch(error => console.error('Error loading reviews:', error));
 }
+
 // Call the function to start the review cycle
 loadReviews();
 
